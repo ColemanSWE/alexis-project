@@ -1,4 +1,25 @@
 import mongoose from 'mongoose'
+
+interface UserDoc extends mongoose.Document {
+    id: Number
+    email: String
+    firstName: String
+    lastName: String
+    avatarUrl: String
+}
+
+interface IUser {
+    id: Number
+    email: String
+    firstName: String
+    lastName: String
+    avatarUrl: String
+}
+
+interface UserModelInterface extends mongoose.Model<any> {
+    build(attr: IUser): UserDoc
+}
+
 const userSchema = new mongoose.Schema({
     id: {
         type: Number,
@@ -26,6 +47,10 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-const User = mongoose.model('User', userSchema)
+userSchema.statics.build = (attr: IUser) => {
+    return new User(attr)
+}
+
+const User = mongoose.model<UserDoc, UserModelInterface>('User', userSchema)
 
 export { User }
