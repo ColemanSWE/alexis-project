@@ -9,9 +9,9 @@ router.get('/api/user', [], async (req: Request, res: Response) => {
 })
 
 router.post('api/user', async (req: Request, res: Response) => {
-    const { id, email, firstName, lastName, avatarUrl } = req.body
+    const { id, email, name, avatar } = req.body
 
-    const user = User.build({ id, email, firstName, lastName, avatarUrl })
+    const user = User.build({ id, email, name, avatar })
     await user.save()
     return res.status(201).send(user)
 })

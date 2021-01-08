@@ -3,17 +3,15 @@ import mongoose from 'mongoose'
 interface UserDoc extends mongoose.Document {
     id: Number
     email: String
-    firstName: String
-    lastName: String
-    avatarUrl: String
+    name: Object
+    avatar: Object
 }
 
 interface IUser {
     id: Number
     email: String
-    firstName: String
-    lastName: String
-    avatarUrl: String
+    name: Object
+    avatar: Object
 }
 
 interface UserModelInterface extends mongoose.Model<any> {
@@ -31,19 +29,23 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
-    firstName: {
-        type: String,  // Not Sure yet if these names and Url can be nested before I 
-        required: true // use them in a javascipt object so this will be the setup for now. 
+    name: {
+        first: {
+            type: String,  // Not Sure yet if these names and Url can be nested before I 
+            required: true // use them in a javascipt object so this will be the setup for now. 
+        },
+    
+        last: {
+            type: String,
+            required: true
+        },
     },
-
-    lastName: {
-        type: String,
-        required: true
-    },
-
-    avatarUrl: {
-        type: String,
-        required: true
+    
+    avatar: {
+        url: {
+            type: String,
+            required: true
+        }
     }
 })
 
