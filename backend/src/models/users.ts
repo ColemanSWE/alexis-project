@@ -31,8 +31,8 @@ const userSchema = new mongoose.Schema({
 
     name: {
         first: {
-            type: String,  // Not Sure yet if these names and Url can be nested before I 
-            required: true // use them in a javascipt object so this will be the setup for now. 
+            type: String,   
+            required: true  
         },
     
         last: {
