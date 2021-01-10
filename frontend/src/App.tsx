@@ -1,6 +1,7 @@
-import * as React from "react";
+import React from "react";
 import "./styles.css";
 import List from "./List";
+import axios from "axios";
 
 /**
  * Howdy, and welcome to the Alexis frontend code evaluation!
@@ -23,5 +24,9 @@ import List from "./List";
  */
 
 export default function App() {
-  return <List />;
+  return (
+    <div className="app-container">
+      <App />
+    </div>
+  )
 }
