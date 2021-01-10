@@ -6,8 +6,20 @@ interface IUserListState {
   userList: Array<any>
 }
 
+interface User {
+  avatar: {
+    url: string
+  }
+  name: {
+    first: string
+    last: string
+  }
+  email?: string
+  id?: string
+}
+
 export default class List extends Component<{}, IUserListState> {
-  constructor(props: any) {
+  constructor(props: IUserListState) {
     super(props)
     this.state = { userList: [] }
   }
@@ -24,7 +36,7 @@ export default class List extends Component<{}, IUserListState> {
     return (
       <div className="list-conatiner">
         <ul>
-          {this.state.userList.map((user: any) => {
+          {this.state.userList.map((user: User) => {
             return <ListItem key={user.id} avatar={user.avatar} name={user.name} />
           })}
         </ul>

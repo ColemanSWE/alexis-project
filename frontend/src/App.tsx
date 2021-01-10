@@ -1,7 +1,7 @@
 import React from "react";
-import "./styles.css";
+import "./styles.scss";
 import List from "./List";
-import axios from "axios";
+import { Me } from './Me'
 
 /**
  * Howdy, and welcome to the Alexis frontend code evaluation!
@@ -10,11 +10,11 @@ import axios from "axios";
  * upper right or simply save a change).
  *
  * Please complete the following tasks:
- * - Fetch users and display their avatar and full name in a list
- * - Display your user in the upper right of the screen (avatar & name)
+ * - Fetch users and display their avatar and full name in a list (DONE)
+ * - Display your user in the upper right of the screen (avatar & name) (DONE just needs styling)
  * - Add an input where you can filter on user names
- * - Make sure your data is typed
- * - Style the UI at your own discretion ;)
+ * - Make sure your data is typed (Sort of DONE I think)
+ * - Style the UI at your own discretion ;) 
  *
  * Endpoints
  * - List users: https://jonruna.github.io/tapi/userList.json
@@ -26,7 +26,8 @@ import axios from "axios";
 export default function App() {
   return (
     <div className="app-container">
-      <App />
+      <Me />
+      <List />
     </div>
   )
 }
