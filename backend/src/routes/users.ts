@@ -3,12 +3,22 @@ import { User } from '../models/users'
 
 const router = express.Router()
 
-router.get('/api/user', [], async (req: Request, res: Response) => {
-    const user = await User.find({})
+// GET that returns all users. 
+router.get('/api/users', [], async (req: Request, res: Response) => {
+    const users = await User.find({})
+    return res.status(200).send(users) 
+})
+
+// GET that returns one user. 
+router.get('/api/user/:id', async (req: Request, res: Response) => {
+    const user = await User.findById(req.params.id, () => {
+        res.send(user)
+    })
     return res.status(200).send(user) 
 })
 
-router.post('api/user', async (req: Request, res: Response) => {
+// POST that adds or updates a user in the database. 
+router.post('api/user/:id', async (req: Request, res: Response) => {
     const { id, email, name, avatar } = req.body
 
     const user = User.build({ id, email, name, avatar })
