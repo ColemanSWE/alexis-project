@@ -25,8 +25,26 @@ router.delete('/api/user/:id', async (req: Request, res: Response) => {
     const user = await User.findByIdAndRemove(req.params.id).exec()
     return res.status(204).end()
 })
+
+// PUT that updates a user. 
+router.put('/api/user/:id', async (req: Request, res: Response) => {
+    const { email, name, avatar } = req.body
+
+    const userId = req.params.id;
+    const user =  { "email": email, "name": name, "avatar": avatar } 
+    User.findByIdAndUpdate(userId, user, {upsert: false}, 
+        (err, docs) => { 
+        if (err){ 
+            console.log(err) 
+        } 
+        else{ 
+            console.log("Updated User : ", docs)
+            return res.status(200).json(docs).end()
+        } 
+    })
+})
     
-// POST that adds or updates a user in the database. 
+// POST that adds a user to the database. 
 router.post('/api/user', async (req: Request, res: Response) => {
     const { email, name, avatar } = req.body
 
