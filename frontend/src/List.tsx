@@ -25,7 +25,7 @@ export default class List extends Component<{}, IUserListState> {
   }
 
   public componentWillMount(): void {
-    const apiUrl = 'https://jonruna.github.io/tapi/userList.json'
+    const apiUrl = 'http://localhost:3000/api/users'
     axios.get(apiUrl).then(response => {
       this.setState({ userList: response.data.userList })
       console.log(this.state.userList)

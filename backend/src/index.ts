@@ -3,9 +3,13 @@ import mongoose from 'mongoose'
 import { json } from 'body-parser'
 import { userRouter } from './routes/users'
 
+var cors = require('cors')
+
 const app = express()
 app.use(json())
 app.use(userRouter)
+app.use(cors())
+
 
 mongoose.connect('mongodb://localhost:27017/users', {
     useCreateIndex: true,

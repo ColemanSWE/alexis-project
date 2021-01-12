@@ -5,6 +5,12 @@ const router = express.Router()
 
 // TODO: Add error messages at least for all methods. 
 
+router.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+})
+
 // GET that returns all users. 
 router.get('/api/users', [], async (req: Request, res: Response) => {
     const users = await User.find({})
