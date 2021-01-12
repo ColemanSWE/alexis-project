@@ -3,6 +3,8 @@ import { User } from '../models/users'
 
 const router = express.Router()
 
+// TODO: Add error messages at least for all methods. 
+
 // GET that returns all users. 
 router.get('/api/users', [], async (req: Request, res: Response) => {
     const users = await User.find({})
