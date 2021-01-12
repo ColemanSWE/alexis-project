@@ -12,8 +12,9 @@ router.get('/api/users', [], async (req: Request, res: Response) => {
 // GET that returns one user. 
 router.get('/api/user/:id', async (req: Request, res: Response) => {
     const user = await User.findById(req.params.id, () => {
-    return res.status(200).send(user)
+        console.log(user)
     })
+    return res.status(200).send(user)
 })
 
 // POST that adds or updates a user in the database. 
