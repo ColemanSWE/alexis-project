@@ -39,7 +39,7 @@ router.put('/api/user/:id', async (req: Request, res: Response) => {
         if (err){ 
             console.log(err) 
         } 
-        else{ 
+        else { 
             console.log("Updated User : ", docs)
             return res.status(200).json(docs).end()
         } 
