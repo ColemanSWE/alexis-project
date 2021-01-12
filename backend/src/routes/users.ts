@@ -18,7 +18,7 @@ router.get('/api/user/:id', async (req: Request, res: Response) => {
 })
 
 // POST that adds or updates a user in the database. 
-router.post('api/user/:id', async (req: Request, res: Response) => {
+router.post('/api/user', async (req: Request, res: Response) => {
     const { id, email, name, avatar } = req.body
 
     const user = User.build({ id, email, name, avatar })
