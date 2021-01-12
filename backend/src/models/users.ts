@@ -1,14 +1,12 @@
 import mongoose from 'mongoose'
 
 interface UserDoc extends mongoose.Document {
-    id: Number
     email: String
     name: Object
     avatar: Object
 }
 
 interface IUser {
-    id: Number
     email: String
     name: Object
     avatar: Object
@@ -19,11 +17,6 @@ interface UserModelInterface extends mongoose.Model<any> {
 }
 
 const userSchema = new mongoose.Schema({
-    id: {
-        type: Number,
-        required: true
-    },
-    
     email: {
         type: String,
         required: true
