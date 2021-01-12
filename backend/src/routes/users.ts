@@ -11,9 +11,8 @@ router.get('/api/users', [], async (req: Request, res: Response) => {
 
 // GET that returns one user. 
 router.get('/api/user/:id', async (req: Request, res: Response) => {
-    const user = await User.findById(req.params.id, () => {
-        console.log(user)
-    })
+    const user = await User.findById(req.params.id, () => {})
+    console.log(user)
     return res.status(200).send(user)
 })
 
