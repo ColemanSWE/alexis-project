@@ -2,30 +2,45 @@
   font-family: sans-serif;
   text-align: center;
   display: grid;
-  grid-template: auto 1fr auto / auto 1fr auto;
+  grid-template-columns: auto 1fr auto / auto 1fr auto;
 }
 
 .list-item {
   flex: 0 1 150px;
-  margin: 5px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 5px 5px 5px;
+  border-radius: 5px;
+  background-color: grey;
+
+  img {
+    border-radius: 5px;
+  }
 }
 
 .list-container {
   grid-column: 1 / 4;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  border: 1px solid;
   margin-top: 10px;
-  width: 100%;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(#ff3b3f, 0.5);
+  background: #caebf2;
 }
 
 .me {
   border: 1px solid;
   grid-column: 1 / 4;
-  justify-content: right;
+  justify-content: space-between;
+  text-align: right;
+  border-radius: 5px;
 
   img {
+    max-width: 10%;
     border-radius: 50%;
+    float: right;
+    margin: 10px 10px 10px 10px;
   }
 }
