@@ -3,8 +3,6 @@ import { User } from '../models/users'
 
 const router = express.Router()
 
-// TODO: Add error messages at least for all methods. 
-
 router.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
