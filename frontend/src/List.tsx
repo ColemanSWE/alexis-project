@@ -32,7 +32,6 @@ export default class List extends Component<{}, IUserListState> {
     const apiUrl = 'https://jonruna.github.io/tapi/userList.json'
     axios.get(apiUrl).then(response => {
       this.setState({ userList: response.data.userList })
-      console.log(this.state.userList)
     })
   }
 
