@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./styles.scss";
 import List from "./List";
 import { Me } from './Me'
@@ -11,10 +11,10 @@ import { Me } from './Me'
  *
  * Please complete the following tasks:
  * - Fetch users and display their avatar and full name in a list (DONE)
- * - Display your user in the upper right of the screen (avatar & name) (DONE just needs styling)
- * - Add an input where you can filter on user names
- * - Make sure your data is typed (Sort of DONE I think)
- * - Style the UI at your own discretion ;) 
+ * - Display your user in the upper right of the screen (avatar & name) (DONE)
+ * - Add an input where you can filter on user names (DONE)
+ * - Make sure your data is typed (DONE)
+ * - Style the UI at your own discretion ;) (It's ugly but this might have to do)
  *
  * Endpoints
  * - List users: https://jonruna.github.io/tapi/userList.json
