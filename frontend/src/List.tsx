@@ -34,7 +34,7 @@ export default class List extends Component<{}, IUserListState> {
 
   render() {
     return (
-      <div className="list-conatiner">
+      <div className="list-container">
         <ul>
           {this.state.userList.map((user: User) => {
             return <ListItem key={user.id} avatar={user.avatar} name={user.name} />
